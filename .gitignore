@@ -1,0 +1,7 @@
+# Project exclude paths
+/.gradle/
+/Chapter00/dao/build/
+/Chapter00/dao/build/classes/java/main/
+/Chapter02/beans/build/
+/Chapter02/beans/build/classes/java/main/
+/Chapter02/beans/build/classes/java/test/
