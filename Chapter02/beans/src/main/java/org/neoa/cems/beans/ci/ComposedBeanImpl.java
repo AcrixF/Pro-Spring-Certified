@@ -41,7 +41,7 @@ public class ComposedBeanImpl implements ComposedBean {
         return code;
     }
 
-    public boolean isComplicated() {
+    public Boolean isComplicated() {
         return complicated;
     }
 }
