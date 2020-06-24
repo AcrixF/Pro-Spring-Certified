@@ -8,10 +8,12 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = {"org.neoa.cems.beans.ci"})
 public class SimpleAppCfg {
 
+
     /*
     @Bean
     public SimpleBean anotherSimpleBean() {
         return new SimpleBeanImpl();
     }
      */
+
 }

@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Description;
 
 @Configuration
 public class SimpleDependentCfg {
@@ -19,6 +20,7 @@ public class SimpleDependentCfg {
     }
 
     @Bean
+    @Description("This bean depends on 'SimpleBean'")
     public DependentBean dependentBean() {
         return  new DependentBeanImpl(simpleBean());
     }

@@ -25,4 +25,12 @@ public class SimpleAppCfgTest {
         assertNotNull(simpleBean);
         assertTrue(simpleBean instanceof SimpleBeanImpl);
     }
+
+    @Test
+    public void testSimpleBeans() {
+        ConfigurableApplicationContext ctx = new AnnotationConfigApplicationContext(SimpleAppCfg.class);
+        ComposedBean composedBean = ctx.getBean(ComposedBean.class);
+        assertNotNull(composedBean);
+        ctx.close();
+    }
 }
