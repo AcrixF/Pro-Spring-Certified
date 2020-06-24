@@ -5,3 +5,6 @@
 /Chapter02/beans/build/
 /Chapter02/beans/build/classes/java/main/
 /Chapter02/beans/build/classes/java/test/
+/Chapter00/repos/build/
+/Chapter02/config/build/
+/.idea/gradle.xml

@@ -39,7 +39,7 @@ subprojects {
             }
 
             compileJava {
-                inputs.property("moduleName", moduleName)
+                    inputs.property("moduleName", moduleName)
                 doFirst {
                     options.compilerArgs = [
                             '-proc:none',

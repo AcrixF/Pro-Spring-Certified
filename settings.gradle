@@ -4,6 +4,9 @@ include 'Chapter00:dao'
 include 'Chapter00:repos'
 
 include 'Chapter02:beans'
+include 'Chapter02:config'
+include 'Chapter02:pojos'
+include 'Chapter02:xml'
 
 rootProject.children.each { project ->
     project.buildFileName = "${project.name}.gradle"
