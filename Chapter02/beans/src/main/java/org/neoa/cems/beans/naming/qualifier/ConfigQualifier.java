@@ -5,5 +5,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan(basePackages = {"org.neoa.cems.beans.naming.qualifier"})
-public class ConfigQualifierTest {
+public class ConfigQualifier {
+
 }

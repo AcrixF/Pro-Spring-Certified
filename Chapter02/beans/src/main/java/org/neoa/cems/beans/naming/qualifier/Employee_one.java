@@ -1,4 +1,7 @@
 package org.neoa.cems.beans.naming.qualifier;
 
-public class Employee_one {
+import org.springframework.stereotype.Component;
+
+@Component
+public class Employee_one implements Person {
 }

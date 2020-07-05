@@ -1,4 +1,8 @@
 package org.neoa.cems.beans.naming.qualifier;
 
-public class Manager {
+import org.springframework.stereotype.Component;
+
+@Component
+public class Manager implements Person {
+
 }

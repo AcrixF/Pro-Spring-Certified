@@ -1,30 +1,21 @@
-package org.neoa.cems.config;
+package org.neoa.cems;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
-import java.sql.SQLException;
 
 @Configuration
 @PropertySource("classpath:db/test-datasource.properties")
-public class TestDataSourceConfig {
+public class EnvTestDataSourceConfig {
 
-    @Value("${db.driverClassName}")
-    private String driverClassName;
-
-    @Value("${db.url}")
-    private String url;
-
-    @Value("${db.username}")
-    private String username;
-
-    @Value("${db.password}")
-    private String password;
+    @Autowired
+    private Environment environment;
 
     @Bean
     public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
@@ -32,12 +23,12 @@ public class TestDataSourceConfig {
     }
 
     @Bean
-    public DataSource dataSource() throws SQLException {
+    public DataSource dataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
-        ds.setDriverClassName(driverClassName);
-        ds.setUrl(url);
-        ds.setUsername(username);
-        ds.setPassword(password);
+        ds.setDriverClassName(environment.getProperty("db.driverClassName"));
+        ds.setUrl(environment.getProperty("db.url"));
+        ds.setUsername(environment.getProperty("db.username"));
+        ds.setPassword(environment.getProperty("db.password"));
         return ds;
     }
 
