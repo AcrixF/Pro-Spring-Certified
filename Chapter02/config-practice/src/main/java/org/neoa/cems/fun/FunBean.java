@@ -28,7 +28,7 @@ public class FunBean implements InitializingBean, DisposableBean {
     }
 
     @PostConstruct
-    public void initMethod() {
+    private void initMethod() {
         logger.info("Stage ??: Calling PostConstruct");
     }
 
@@ -43,7 +43,7 @@ public class FunBean implements InitializingBean, DisposableBean {
     }
 
     @PreDestroy
-    public void preDestroy() {
+    private void preDestroy() {
         logger.info("Stage ??: Calling PreDestroy");
     }
 }
