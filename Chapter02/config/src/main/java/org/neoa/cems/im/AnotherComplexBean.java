@@ -1,25 +1,19 @@
-package org.neoa.cems.ib;
+package org.neoa.cems.im;
 
 import org.neoa.cems.lc.AnotherSimpleBean;
 import org.neoa.cems.lc.SimpleBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
+public class AnotherComplexBean {
 
-@Component
-public class ComplexBean implements InitializingBean, DisposableBean {
-
-    private Logger logger = LoggerFactory.getLogger(ComplexBean.class);
+    private Logger logger = LoggerFactory.getLogger(AnotherSimpleBean.class);
 
     private SimpleBean simpleBean;
     private AnotherSimpleBean anotherSimpleBean;
 
-    public ComplexBean() {
+    public AnotherComplexBean() {
         logger.info("Stage 1: Calling the constructor.");
     }
 
@@ -29,23 +23,16 @@ public class ComplexBean implements InitializingBean, DisposableBean {
         this.simpleBean = simpleBean;
     }
 
-    @PostConstruct
-    public void init() {
-        logger.info("Stage 2.5 PostConstruct Called.");
-    }
-
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        logger.info("Stage 3: Calling the afterPropertiesSet.");
+    public void beanInitMethod() {
+        logger.info("Stage 3: Calling the beanInitMethod");
         long ct = System.currentTimeMillis();
         if (ct % 2 == 0) {
             anotherSimpleBean = new AnotherSimpleBean();
         }
     }
 
-    @Override
-    public void destroy() throws Exception {
-        logger.info("Stage 4: Calling destroy method.");
+    public void beanDestroyMethod() {
+        logger.info("Stage 4: Calling the beanDestroyMethod");
     }
 
     public SimpleBean getSimpleBean() {

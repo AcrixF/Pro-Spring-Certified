@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan(basePackages = {"org.neoa.cems.ib"})
-public class IInitializingBeanConfig {
+public class InitializingBeanConfig {
 
     @Bean
     public SimpleBean simpleBean() {

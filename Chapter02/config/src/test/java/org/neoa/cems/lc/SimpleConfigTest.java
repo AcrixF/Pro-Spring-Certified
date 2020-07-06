@@ -12,9 +12,13 @@ public class SimpleConfigTest {
     @Test
     public void simpleConfig() {
         ConfigurableApplicationContext ctx = new AnnotationConfigApplicationContext(SimpleConfig.class);
+        ctx.registerShutdownHook();
+
         ComplexBean complexBean = ctx.getBean(ComplexBean.class);
         assertNotNull(complexBean);
         assertNull(complexBean.getSimpleBean());
+
+        ctx.close();
     }
 
 }

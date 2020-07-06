@@ -11,9 +11,10 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
-@PropertySource("classpath:db/prod-datasource.properties")
-@Configuration
+//@PropertySource("classpath:db/prod-datasource.properties")
+//@Configuration
 public class DataSourceCfg {
+    /*
 
     @Value("${driverClassName}")
     private String driverClassName;
@@ -39,4 +40,5 @@ public class DataSourceCfg {
         dataSource.setPassword(password);
         return dataSource;
     }
+     */
 }

@@ -2,14 +2,14 @@ package org.neoa.cems.lc;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 @Component
-public class ComplexBean implements InitializingBean {
+public class ComplexBean {
 
     private Logger logger = LoggerFactory.getLogger(ComplexBean.class);
 
@@ -35,7 +35,6 @@ public class ComplexBean implements InitializingBean {
         return anotherSimpleBean;
     }
 
-    /*
     @PostConstruct
     private void initMethod() {
         logger.info("Stage 3: Calling the initMethod");
@@ -44,14 +43,10 @@ public class ComplexBean implements InitializingBean {
             anotherSimpleBean = new AnotherSimpleBean();
         }
     }
-     */
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        logger.info("Stage 3: Calling the afterPropertiesSet.");
-        long ct = System.currentTimeMillis();
-        if (ct % 2 == 0) {
-            anotherSimpleBean = new AnotherSimpleBean();
-        }
+    @PreDestroy
+    public void destroy() {
+        logger.info("Stage 4: Calling the destroy method.");
     }
+
 }
