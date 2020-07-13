@@ -1,5 +1,4 @@
 module org.neoa.cems.config {
-    requires org.neoa.cems.dao;
     requires org.apache.commons.lang3;
     requires java.sql;
     requires org.slf4j;
@@ -9,4 +8,9 @@ module org.neoa.cems.config {
     requires spring.jdbc;
     requires java.naming;
     requires java.annotation;
+
+    requires org.neoa.cems.dao;
+    requires org.neoa.cems.pojos;
+    requires ojdbc8;
+
 }

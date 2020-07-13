@@ -11,7 +11,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
-//@PropertySource("classpath:db/prod-datasource.properties")
+//@PropertySource("classpath:db/test-datasource.properties")
 //@Configuration
 public class DataSourceCfg {
     /*
